@@ -144,6 +144,8 @@ To get started:
 
 ## Changelog
 
+- **v0.4.24 (2025-12-16):**
+  - **Fix (rTorrent):** Fixed an issue where labels/categories selected in the advanced add dialog were not being applied to torrents. The background script now correctly checks both `defaultCategory` and `category` server configuration fields when determining the label to use.
 - **v0.4.23 (2025-12-04):**
   - **Fix (Critical, rTorrent):** Fully resolved XML-RPC fault -506 ("Method 'get_free_disk_space' not defined") during server status checks and "Test Connection". Removed faulty call entirely.
   - **Feat (rTorrent):** Implemented complete `testConnection` stats compatibility: client version, torrent count (`download_list`), global download/upload speeds (`get_down_rate`/`get_up_rate`), `torrentsInfo` object for dashboard/popup display.
