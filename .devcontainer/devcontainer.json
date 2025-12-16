@@ -1,0 +1,36 @@
+{
+  "name": "TorrentAdder Development",
+  "image": "node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers-extra/features/pnpm": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-css-peek",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-eslint"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "tailwindCSS.includeLanguages": {
+          "javascript": "javascript",
+          "html": "HTML"
+        }
+      }
+    }
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "pnpm install",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.envrc,target=/home/node/.envrc,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/private.pem,target=/home/node/private.pem,type=bind,consistency=cached"
+  ]
+}
